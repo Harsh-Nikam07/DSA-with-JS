@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Traversing and Accessing</title>
+    <style>
+      #error {
+        color: red;
+      }
+      #output {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="element" />
+    <button onclick="getElement()">Get Element</button>
+    <br />
+    <span id="output"></span>
+    <span id="error"></span>
+    <script>
+      let data = [1, 2, 3, 4, 4, 5, 3535, 53, 5, 35];
+
+      function getElement() {
+        let el = parseInt(document.getElementById("element").value);
+
+        if (!isNaN(el) && el >= 0 && el < data.length) {
+          document.getElementById("output").innerHTML = `output = ${data[el]}`;
+          document.getElementById("error").innerHTML = ""; // Clear error
+        } else {
+          document.getElementById("error").innerHTML =
+            "Please enter a valid input";
+          document.getElementById("output").innerHTML = ""; // Clear output
+        }
+      }
+    </script>
+  </body>
+</html>
